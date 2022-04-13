@@ -1,6 +1,6 @@
 import { View, Text ,Image} from 'react-native'
 import React from 'react'
-
+import { getImageFromApi } from '../Api/index'
 const MovieCard = ({movie}) => {
   return (
     <View style={{justifyContent:"center",alignItems:"center"}}>
@@ -13,7 +13,7 @@ const MovieCard = ({movie}) => {
             shadowColor:"black"
             
         }}
-        source={{uri:movie.Poster}}
+        source={{uri:getImageFromApi(movie.poster_path)}}
       />
     </View>
   )

@@ -9,13 +9,13 @@ export default function App() {
   const [searchMovie,setSearchMovie] = useState('');
   
   useEffect(()=>{
-    const getMovies = async ()=>setMovies(await getMoviesFromApi('Batman'))
+    const getMovies = async ()=>setMovies(await getMoviesFromApi('batman',1))
     getMovies();
 
   },[]);
 
 const Search = async ()=>{
-  setMovies(await getMoviesFromApi(searchMovie));
+  setMovies(await getMoviesFromApi(searchMovie,1));
   setSearchMovie('');
 }
   
@@ -38,14 +38,14 @@ const Search = async ()=>{
       left={<TextInput.Icon name="magnify" onPress={Search} />}
       onSubmitEditing={Search}
       />
-       {movies.Search &&(
+       {movies.results &&(
       <ScrollView contentContainerStyle={{
         flexDirection:"row",
         flexWrap:"wrap",
         justifyContent:"space-around",
         alignItems:"center"
       }}>
-          {movies.Search.map((movie,i)=>(
+          {movies.results.map((movie,i)=>(
             <MovieCard movie={movie} key={i}/>
           ))}
       </ScrollView>
