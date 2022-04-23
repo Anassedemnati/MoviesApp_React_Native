@@ -1,6 +1,6 @@
 const API_TOKEN = '';
 
-//const url = "http://www.omdbapi.com/?i=tt3896198&apikey=5d1a7305"
+
 
 export const getMoviesFromApi = async (title,page)=>{
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_TOKEN}&language=fr&query=${title}&page=${page}`;
