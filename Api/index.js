@@ -1,4 +1,4 @@
-const API_TOKEN = '8ed027e1fbaca998228ba40a13ae73fc';
+const API_TOKEN = '';
 
 //const url = "http://www.omdbapi.com/?i=tt3896198&apikey=5d1a7305"
 
